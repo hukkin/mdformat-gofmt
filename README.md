@@ -7,8 +7,16 @@
 ## Description
 mdformat-gofmt is an [mdformat](https://github.com/executablebooks/mdformat) plugin
 that makes mdformat format Go code blocks with [gofmt](https://golang.org/cmd/gofmt).
+The plugin invokes gofmt in a subprocess so having Go installed is a requirement.
+
+## Installing
+1. [Install Go](https://golang.org/doc/install)
+1. Install mdformat-gofmt
+   ```bash
+   pip install mdformat-gofmt
+   ```
+
 ## Usage
-Install with:
 ```bash
-pip install mdformat-gofmt
+mdformat YOUR_MARKDOWN_FILE.md
 ```
