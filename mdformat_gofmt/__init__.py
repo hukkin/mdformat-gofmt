@@ -5,7 +5,12 @@ __version__ = "0.0.1"  # DO NOT EDIT THIS LINE MANUALLY. LET bump2version UTILIT
 
 def format_go(unformatted: str, _info_str: str) -> str:
     unformatted_bytes = unformatted.encode("utf-8")
-    result = subprocess.run(["gofmt"], stdout=subprocess.PIPE, input=unformatted_bytes)
+    result = subprocess.run(
+        ["gofmt"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        input=unformatted_bytes,
+    )
     if result.returncode:
         raise Exception("Failed to format Go code")
     return result.stdout.decode("utf-8")
